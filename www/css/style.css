@@ -1,0 +1,250 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+nav{
+    display: flex;
+    background-color: #100036;
+    justify-content: space-around;
+    padding: 20px 0;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    width: 40%;
+    justify-content: space-between;
+}
+
+nav ul li a{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+nav .logo{
+    color: #f5f5f5;
+    letter-spacing: 4px;
+}
+
+.logo h4 span, nav ul li a:hover{
+    color: #f5f5f5;
+    font-weight: bold;
+    margin-right: 5px;
+    border-radius: 3px;
+    padding: 0px 5px;
+}
+
+#about h2 {
+    color: #100036;
+    font-weight: bold;
+}
+
+/* Hamburger Menu */
+.menu-toggle{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    display: none;
+}
+
+.menu-toggle input{
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    opacity: 0;
+    left: -5px;
+    top: -5px;
+    z-index: 2;
+}
+
+.menu-toggle span{
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: #f5f5f5;
+    border-radius: 3px;
+    transition: all 0.5s;
+}
+
+/* Menu animation */
+.menu-toggle span:nth-child(2){
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4){
+    transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2){
+    transform: rotate(45deg);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3){
+    transform: scale(0);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4){
+    transform: rotate(-45deg);
+}
+
+/* Parallax */
+.pimg{
+    position:relative;
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-image:url('https://storage.googleapis.com/dicoding-naomi/img/img-prx.jpg');
+    min-height:420px;
+    z-index: 0;
+}
+
+#img-profile {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 15%;
+    max-width: 180px;
+}
+
+.container{
+    z-index: 0;
+}
+
+/* Aside dan Content */
+#content{
+    float: left;
+    width: 70%;
+}
+
+/* About */
+#about {
+    background-color: #fff;
+    color: #000122;
+    font-weight: 500;
+    text-align: justify;
+    margin: auto 10%;
+    padding: 30px 40px;
+    line-height: 1.;
+}
+
+#reach-me {
+    margin-top: 30px;
+}
+
+#about h2{
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.reach-item {
+    margin-top: 10px;  
+    font-size: 20px;
+}
+
+.reach-el {
+    margin: 0px 0px 0px 10px;
+    font-size: 0.8em;
+}
+
+/* Footer */
+footer{
+    text-align: center;
+    color: white;
+    background-color: #100036;
+    padding: 10px;
+}
+
+main{
+    overflow: auto;
+}
+
+/* Mobile */
+@media screen and (max-width: 768px){
+    nav ul {
+        width: 50%;
+    }
+
+    #content{
+        width: 100%;
+    }
+
+    aside{
+        float: none;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .column{
+        width: 90%;
+    }
+
+    #img-profile {
+        display: block;
+        margin: auto;
+        padding-top: 40%;
+        max-width: 150px;
+    }    
+}
+
+
+@media screen and (max-width: 576px){
+    .menu-toggle{
+        display: flex;
+        z-index: 1;
+    }
+    
+    nav ul{
+        position: absolute;
+        right: 0;
+        flex-direction: column;
+        background-color: #100036;
+        height: 100vh;
+        align-items: center;
+        justify-content: space-evenly;
+        z-index: -1;
+        transform: translateX(100%);
+        transition: all 0.1s;
+    }
+
+
+    nav ul.slide{
+        transform: translateX(0);
+        z-index: 1;
+    }
+
+    #content{
+        width: 100%;
+    }
+
+    aside{
+        float: none;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .row{
+        flex-direction: column;
+    }
+
+    .column{
+        max-width: 70vh;
+    }
+
+    #img-profile {
+        display: block;
+        margin: auto;
+        padding-top: 40%;
+        max-width: 150px;
+    }    
+}
